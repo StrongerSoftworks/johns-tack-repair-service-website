@@ -1,6 +1,8 @@
-import Header from "@/components/header/Header";
-import About from "@/components/about/About";
-import Contact from "@/components/contact/Contact";
+import Header from "@/components/Header";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { MenuSidebar } from "@/components/Menu/MenuSidebar";
 
@@ -10,13 +12,14 @@ function App() {
   return (
     <SidebarProvider defaultOpen={false}>
       <MenuSidebar />
-      <main className="flex flex-col">
+      <div className="flex flex-col max-w-7xl bg-slate-100">
         <Header />
-        <div className="mx-2 md:mx-16 lg:mx-28 mt-48">
+        <div className="mx-2 md:mx-16 lg:mx-28 mt-32">
           <About />
           <Contact />
         </div>
-      </main>
+        <Footer />
+      </div>
     </SidebarProvider>
   );
 }
