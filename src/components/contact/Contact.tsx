@@ -1,33 +1,23 @@
+import Section from "../Section";
+
 function Contact() {
   return (
-    <>
-      <section>
-        <div>
-          <h2>Located in Mt. Brydges Ontario</h2>
-        </div>
-        <div>
-          <p>
-            Open Tuesdays through Saturdays by appointment. Closed Sundays,
-            Mondays, National/Provincial Holidays, Nov. 11th. John's Tack Repair
-            Service
-          </p>
-        </div>
-        <div>
-          <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-            <div className="p-4">
-              <h5 className="mb-2 text-xl ">
-                Website Review Check Update from Our Team in San Francisco
-              </h5>
-              <p className="leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min
-                by walk and near to Naviglio where you can enjoy the main night
-                life in Barcelona.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    <Section id="contact">
+      <div className="mb-5">
+        <h2>Located in Mt. Brydges Ontario</h2>
+      </div>
+      <div className="mb-5 mx-3">
+        <p>
+          Open Tuesdays through Saturdays by appointment. Closed Sundays,
+          Mondays, National/Provincial Holidays, Nov. 11th. John's Tack Repair
+          Service
+        </p>
+      </div>
+      <div className="mb-5 mx-3">21775 Adelaide Road</div>
+      <div className="flex justify-center">
+        <img src="/img/map2.png" height="400px" width="auto" />
+      </div>
+    </Section>
   );
 }
 

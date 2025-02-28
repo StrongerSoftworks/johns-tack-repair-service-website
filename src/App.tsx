@@ -1,20 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Header from "./components/header/Header";
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
+import Header from "@/components/header/Header";
+import About from "@/components/about/About";
+import Contact from "@/components/contact/Contact";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { MenuSidebar } from "@/components/Menu/MenuSidebar";
+
+import "./styles/main.css";
 
 function App() {
   return (
-    <>
-      <Header />
-      <main className="mx-2 sm:mx-2 md:mx-16 lg:mx-28">
-        <About />
-        <Contact />
+    <SidebarProvider defaultOpen={false}>
+      <MenuSidebar />
+      <main className="flex flex-col">
+        <Header />
+        <div className="mx-2 md:mx-16 lg:mx-28 mt-48">
+          <About />
+          <Contact />
+        </div>
       </main>
-    </>
+    </SidebarProvider>
   );
 }
 
