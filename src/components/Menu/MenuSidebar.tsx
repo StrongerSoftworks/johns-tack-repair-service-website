@@ -12,6 +12,8 @@ import MenuTrigger from "./MenuTrigger";
 import { useSidebar } from "@/components/ui/sidebar";
 
 export function MenuSidebar() {
+  const { setOpen } = useSidebar();
+
   const items = [
     {
       title: "Home",
@@ -35,8 +37,6 @@ export function MenuSidebar() {
     },
   ];
 
-  const { toggleSidebar } = useSidebar();
-
   return (
     <Sidebar collapsible="icon" variant="sidebar" side="left">
       <SidebarContent>
@@ -50,7 +50,12 @@ export function MenuSidebar() {
             <SidebarMenu role="navigation">
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild onClick={toggleSidebar}>
+                  <SidebarMenuButton
+                    asChild
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
