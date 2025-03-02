@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import ImageProxy from "../ImageProxy";
 
 function Contact() {
   return (
@@ -46,7 +47,12 @@ function Contact() {
         <CardContent>
           <div className="flex flex-col gap-3 justify-center">
             21775 Adelaide Road, Mt. Brydges, ON, N0L 1W0
-            <img src="/img/map2.png" height="400px" width="auto" />
+            <ImageProxy
+              src="/img/map2.png"
+              height="400px"
+              width="auto"
+              options={{ format: "webp", height: 400 }}
+            />
           </div>
         </CardContent>
       </Card>

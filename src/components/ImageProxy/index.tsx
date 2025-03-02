@@ -44,8 +44,12 @@ const ImageProxy = ({
   options,
   ...props
 }: IImage & React.ImgHTMLAttributes<HTMLImageElement>) => {
-  const baseUrl = import.meta.env.VITE_IMAGE_PROXY_URL;
-  if (!baseUrl) {
+  if (import.meta.env.VITE_IMAGE_PATH) {
+    props.src = `${import.meta.env.VITE_IMAGE_PATH}${props.src}`;
+  }
+
+  const proxyBaseUrl = import.meta.env.VITE_IMAGE_PROXY_URL;
+  if (!proxyBaseUrl) {
     return (
       <img
         {...props}
@@ -55,10 +59,13 @@ const ImageProxy = ({
     );
   }
 
-  const fallback = buildSrc(baseUrl, props.src, { ...options, format: "jpg" });
-  const src1x = buildSrc(baseUrl, props.src, options, 1);
-  const src2x = buildSrc(baseUrl, props.src, options, 2);
-  const src3x = buildSrc(baseUrl, props.src, options, 3);
+  const fallback = buildSrc(proxyBaseUrl, props.src, {
+    ...options,
+    format: "jpg",
+  });
+  const src1x = buildSrc(proxyBaseUrl, props.src, options, 1);
+  const src2x = buildSrc(proxyBaseUrl, props.src, options, 2);
+  const src3x = buildSrc(proxyBaseUrl, props.src, options, 3);
 
   return (
     <img
