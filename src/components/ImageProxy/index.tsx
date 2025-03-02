@@ -7,18 +7,18 @@ export interface IImageProxyOptions {
   quality?: number;
 }
 
-export interface IImage extends IImageProxyOptions {
-  alt: string;
-  src: string;
+export interface IImage extends React.ImgHTMLAttributes<HTMLImageElement> {
   options?: IImageProxyOptions;
 }
 
 const buildSrc = (
   baseUrl: string,
-  src: string,
+  src: string | undefined,
   options?: IImageProxyOptions,
   dpi: number = 1
 ) => {
+  if (!src) return "";
+
   let imageUrl = `${baseUrl}?img=${encodeURIComponent(
     src.startsWith("http") ? src : window.location.origin + src
   )}`;
@@ -55,12 +55,7 @@ const ImageProxy = ({
     );
   }
 
-  const fallback = buildSrc(
-    baseUrl,
-    props.src,
-    { ...options, format: "jpg" },
-    1
-  );
+  const fallback = buildSrc(baseUrl, props.src, { ...options, format: "jpg" });
   const src1x = buildSrc(baseUrl, props.src, options, 1);
   const src2x = buildSrc(baseUrl, props.src, options, 2);
   const src3x = buildSrc(baseUrl, props.src, options, 3);

@@ -27,10 +27,12 @@ function About() {
 
   return (
     <Section id="about">
-      <div className="mb-5">
-        <h2>Local Tack Repair and Leather Work</h2>
+      <div className="flex justify-center mb-5">
+        <h2 className="text-3xl font-semibold uppercase">
+          Local Tack Repair and Leather Work
+        </h2>
       </div>
-      <div className="mb-5 mx-3">
+      <div className="mb-5">
         <div className="flex flex-wrap mb-5 gap-3 justify-center">
           {items.map((item) => (
             <Card className="basis-full md:basis-2/5 min-h-48">
@@ -43,7 +45,7 @@ function About() {
             </Card>
           ))}
         </div>
-        <div className="mb-5">
+        <div className="flex flex-col justify-center mb-5">
           <Images />
         </div>
         <div className="flex justify-center text-sm">

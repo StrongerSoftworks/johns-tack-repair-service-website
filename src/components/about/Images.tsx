@@ -32,7 +32,7 @@ export default function Images() {
   ];
 
   return (
-    <Carousel className="mx-20">
+    <Carousel className="mx-24">
       <CarouselContent>
         {images.map((image) => (
           <CarouselItem className="md:basis-auto flex justify-center">

@@ -7,32 +7,35 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Home, Info, MapPinned } from "lucide-react";
+import { CalendarDays, Info, MapPinned, Phone } from "lucide-react";
 import MenuTrigger from "./MenuTrigger";
 import { useSidebar } from "@/components/ui/sidebar";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 export function MenuSidebar() {
-  const { setOpen } = useSidebar();
+  useSmoothScroll(100);
+
+  const { setOpen, setOpenMobile } = useSidebar();
 
   const items = [
-    {
-      title: "Home",
-      url: "#",
-      icon: Home,
-    },
     {
       title: "About",
       url: "#about",
       icon: Info,
     },
-    // {
-    //   title: "Services",
-    //   url: "#services",
-    //   icon: PencilRuler,
-    // },
+    {
+      title: "Hours",
+      url: "#hours",
+      icon: CalendarDays,
+    },
     {
       title: "Contact",
       url: "#contact",
+      icon: Phone,
+    },
+    {
+      title: "Location",
+      url: "#location",
       icon: MapPinned,
     },
   ];
@@ -54,6 +57,7 @@ export function MenuSidebar() {
                     asChild
                     onClick={() => {
                       setOpen(false);
+                      setOpenMobile(false);
                     }}
                   >
                     <a href={item.url}>

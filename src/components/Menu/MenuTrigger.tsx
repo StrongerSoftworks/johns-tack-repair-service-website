@@ -4,11 +4,11 @@ import { Menu, X } from "lucide-react";
 export default function MenuTrigger({
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  const { toggleSidebar, state } = useSidebar();
+  const { toggleSidebar, open, openMobile } = useSidebar();
 
   return (
     <button {...props} onClick={toggleSidebar}>
-      {state === "expanded" ? <X /> : <Menu />}
+      {open || openMobile ? <X /> : <Menu />}
     </button>
   );
 }

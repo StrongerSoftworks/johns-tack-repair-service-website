@@ -1,4 +1,4 @@
-import { CalendarDays, MapPin, MapPinned, Phone } from "lucide-react";
+import { CalendarDays, MapPinned, Phone } from "lucide-react";
 import Section from "../Section";
 import {
   Card,
@@ -10,22 +10,22 @@ import {
 
 function Contact() {
   return (
-    <Section id="contact" className="flex flex-wrap mb-5 gap-3 justify-center">
-      <Card className="basis-full md:basis-2/5">
+    <Section className="flex flex-wrap mb-5 gap-3 justify-center">
+      <Card id="hours" className="basis-full md:basis-2/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <CalendarDays className="inline" /> Hours
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col gap-2">
+          <p>Open Tuesdays through Saturdays by appointment.</p>
           <p>
-            Open <u>Tuesdays through Saturdays by appointment</u>. Closed
-            Sundays, Mondays, National/Provincial Holidays, Nov. 11th.
+            Closed Sundays, Mondays, National/Provincial Holidays, Nov. 11th.
           </p>
         </CardContent>
       </Card>
 
-      <Card className="basis-full md:basis-2/5">
+      <Card id="contact" className="basis-full md:basis-2/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Phone className="inline" /> Contact
@@ -36,7 +36,7 @@ function Contact() {
         </CardContent>
       </Card>
 
-      <Card className="basis-full md:basis-3/5">
+      <Card id="location" className="basis-full md:basis-3/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MapPinned className="inline" /> Location
@@ -50,13 +50,6 @@ function Contact() {
           </div>
         </CardContent>
       </Card>
-
-      <div className="mb-5">
-        <h2></h2>
-      </div>
-      <div className="mb-5 mx-3">
-        <p></p>
-      </div>
     </Section>
   );
 }

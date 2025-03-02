@@ -12,11 +12,13 @@ function App() {
   return (
     <SidebarProvider defaultOpen={false}>
       <MenuSidebar />
-      <div className="flex flex-col max-w-7xl bg-slate-100">
+      <div className="flex flex-col bg-slate-100 w-full">
         <Header />
-        <div className="mx-2 md:mx-16 lg:mx-28 mt-32">
-          <About />
-          <Contact />
+        <div className="flex justify-center mx-2 mt-48">
+          <div className="lg:max-w-4xl">
+            <About />
+            <Contact />
+          </div>
         </div>
         <Footer />
       </div>
