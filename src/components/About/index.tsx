@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 function About() {
   const items = [
     {
-      title: "Saddles",
+      title: "Saddle Repair",
       description:
         "Repairs to Horse Harnesses, Bridles, Halters, Saddles and more.",
     },
     {
-      title: "On Site Service",
+      title: "Halters and Bridles",
       description:
         "Leather halters, British/Canadian Cavalry style bridles made on site.",
     },
@@ -45,11 +45,11 @@ function About() {
             </Card>
           ))}
         </div>
+        <div className="flex justify-center text-sm mb-5">
+          <p>Payment cash or E-Transfer. No Debit or Credit Cards accepted.</p>
+        </div>
         <div className="flex flex-col justify-center mb-5">
           <Images />
-        </div>
-        <div className="flex justify-center text-sm">
-          <p>Payment cash or E-Transfer. No Debit or Credit Cards accepted.</p>
         </div>
       </div>
     </Section>
