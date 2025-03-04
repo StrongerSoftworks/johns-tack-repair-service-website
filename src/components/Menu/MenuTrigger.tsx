@@ -7,7 +7,7 @@ export default function MenuTrigger({
   const { toggleSidebar, open, openMobile } = useSidebar();
 
   return (
-    <button {...props} onClick={toggleSidebar}>
+    <button {...props} onClick={toggleSidebar} name="menu">
       {open || openMobile ? <X /> : <Menu />}
     </button>
   );

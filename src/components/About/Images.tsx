@@ -31,24 +31,24 @@ export default function Images() {
 
   const images: React.ImgHTMLAttributes<HTMLImageElement>[] = [
     {
+      src: "/img/img5.jpg",
+      alt: "Canadian calvary bridles",
+    },
+    {
       src: "/img/img2.jpg",
-      alt: "",
+      alt: "Custom belts",
     },
     {
       src: "/img/img1.jpg",
-      alt: "",
+      alt: "Leather repair",
     },
     {
       src: "/img/img3.jpg",
-      alt: "",
+      alt: "Knife sheaths",
     },
     {
       src: "/img/img4.jpg",
-      alt: "",
-    },
-    {
-      src: "/img/img5.jpg",
-      alt: "",
+      alt: "Local workshop in Mount Brydges",
     },
   ];
 
@@ -73,7 +73,7 @@ export default function Images() {
   return (
     <>
       <Dialog>
-        <Carousel className="mx-24">
+        <Carousel className="mx-12 md:mx-24">
           <DialogTrigger>
             <CarouselContent>
               {images.map((image, index) => (
