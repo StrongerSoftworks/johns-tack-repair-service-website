@@ -55,6 +55,7 @@ function Contact() {
                 src="/img/map2.png"
                 height="400px"
                 width="auto"
+                alt="Map of 21775 Adelaide Road, Mt. Brydges, ON, N0L 1W0"
                 options={{ format: "webp", height: 400 }}
               />
             </div>

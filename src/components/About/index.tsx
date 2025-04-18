@@ -34,8 +34,8 @@ function About() {
       </div>
       <div className="mb-5">
         <div className="flex flex-wrap mb-5 gap-3 justify-center">
-          {items.map((item) => (
-            <Card className="basis-full md:basis-2/5 min-h-48">
+          {items.map((item, index) => (
+            <Card key={index} className="basis-full md:basis-2/5 min-h-48">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
               </CardHeader>

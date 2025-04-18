@@ -48,15 +48,11 @@ const ImageProxy = ({
     props.src = `${import.meta.env.VITE_IMAGE_PATH}${props.src}`;
   }
 
+  const className = `max-h-full max-w-full object-contain ${props.className}`;
+
   const proxyBaseUrl = import.meta.env.VITE_IMAGE_PROXY_URL;
   if (!proxyBaseUrl) {
-    return (
-      <img
-        {...props}
-        className={`max-h-full max-w-full object-contain ${props.className}`}
-        loading="lazy"
-      />
-    );
+    return <img {...props} className={className} loading="lazy" />;
   }
 
   const fallback = buildSrc(proxyBaseUrl, props.src, {
@@ -72,7 +68,7 @@ const ImageProxy = ({
       {...props}
       src={fallback}
       srcSet={`${src1x} 1x, ${src2x} 2x, ${src3x} 3x`}
-      className={`max-h-full max-w-full object-contain ${props.className}`}
+      className={className}
       loading="lazy"
     />
   );

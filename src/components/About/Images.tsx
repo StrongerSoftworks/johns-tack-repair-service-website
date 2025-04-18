@@ -78,6 +78,7 @@ export default function Images() {
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem
+                  key={index}
                   className="md:basis-auto flex justify-center"
                   onClick={() => handleCarouselItemClick(index)}
                 >
